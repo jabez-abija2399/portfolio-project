@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bootstrap Layout with Header, Sidebar, Content, and Footer</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    /* Custom Styles */
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+    }
+    
+    .sidebar {
+      background-color: #f8f9fa;
+      border-right: 1px solid #dee2e6;
+    }
+    
+    .content {
+      background-color: #fff;
+      border: 1px solid #dee2e6;
+      padding: 20px;
+    }
+    
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+    }
+    
+    .toggle-btn {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <header>
+      <h1>Header</h1>
+    </header>
+
+    <div class="row">
+      <aside class="col-md-3 sidebar" id="sidebar">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </aside>
+
+      <main class="col-md-9 content">
+        <h2>Main Content</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in nibh dictum, blandit nisi eget, efficitur tortor. Mauris volutpat pellentesque massa, id facilisis turpis consectetur sed. Vivamus efficitur ante eget mauris rutrum, eget fermentum sem feugiat.</p>
+      </main>
+    </div>
+
+    <footer>
+      <p>Footer</p>
+    </footer>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $(".toggle-btn").click(function() {
+        $("#sidebar").toggleClass("d-none");
+      });
+    });
+  </script>
+</body>
+</html>
