@@ -1,12 +1,12 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField,PasswordField,SubmitField,BooleanField,SelectField,RadioField,BooleanField,TextAreaField
 from wtforms.validators import DataRequired,Length,Email,EqualTo,Optional,ValidationError
-from models import User
+from .models import User
 from wtforms.fields import SelectMultipleField
+from flask_login import LoginManager, UserMixin
 
 
-
-class RegistrationForm(FlaskForm):
+class RegistrationForm(FlaskForm,UserMixin):
     FullName = StringField('Full Name', validators=[DataRequired(), Length(min=2, max=100)])
     username = StringField('Username', validators=[DataRequired()])
     email = StringField('Email', validators=[Optional(), Email()])
@@ -35,8 +35,4 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Login')
 
 
-
-class Send_message(FlaskForm):
-    messages = TextAreaField('Text', validators=[DataRequired()])
-    submit = SubmitField('send-message')
 
